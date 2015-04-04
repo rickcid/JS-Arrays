@@ -149,8 +149,24 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   and the second is an item to add to your grocery list. In addItem add the item you passed in to
   myGroceryList then return the new, updated grocery list.
 */
+var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
-  //Code Here
+var removeItem = function(myGroceryList, remove) {
+  for (var i = 0; i < myGroceryList.length; i++) {
+    if (myGroceryList[i] === remove) {
+      myGroceryList.splice(i, 1);
+      return myGroceryList;
+    }
+  }
+}
+
+var addItem = function(myGroceryList, add) {
+  myGroceryList.push(add);
+  return myGroceryList;
+}
+
+removeItem(myGroceryList, 'chips');
+addItem(myGroceryList, 'Jerky');
 
 //removeItem('chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem('Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
@@ -160,15 +176,19 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //Next Problem
 
 
-
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
-  //Code Here
+var maker = function() {
+  var myArray = [];
+  for (var i = 0; i < 216; i++) {
+    myArray.push(++i);
+  }
+  return myArray;
+}
 
-
+maker();
 
 //Next Problem
-
 
 
 //Write a function called addTen that is given 'numbers' as it's only argument and returns a new
@@ -192,7 +212,7 @@ addTen(numbers);
 
 //Above is some code that adds a random number to both arr1 and arr2.
 //Write a function that is given arr1 and arr2 is it's only arguments. Return the array which is longest.
-var num1 = Math.floor(Math).random() * (30- 0) + 0);
+var num1 = Math.floor(Math.random() * (30 - 0) + 0);
 var num2 = Math.floor(Math.random() * (30 - 0) + 0);
 var arr1 = [];
 var arr2 = [];
@@ -203,7 +223,7 @@ for(var i = 0; i < num2; i++){
   arr2.push(i);
 }
 
-var combined = function(arr1, arr2) {
+var longest = function(arr1, arr2) {
   if (arr1.length > arr2.length) {
     return arr1;
   }
@@ -212,11 +232,17 @@ var combined = function(arr1, arr2) {
   }
 }
 
-combined(arr1, arr2);
+longest(arr1, arr2);
+
 
 /*As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example)
   'both' should return a new array full of numbers that are found in both arr1 and arr2.
 */
 
-  //Code Here
+var both = function(arr1, arr2) {
+  return arr1.concat(arr2);
+}
+
+both(arr1, arr2);
+
